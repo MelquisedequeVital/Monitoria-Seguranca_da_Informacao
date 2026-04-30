@@ -70,13 +70,23 @@ Sempre que você acessa um site seguro (como o seu banco ou o Gmail), o protocol
 **O cenário:**
 Você (seu navegador) quer conversar com o servidor do banco. Vocês precisam de uma **chave simétrica** (como o AES-256) para criptografar as mensagens de forma rápida. Mas como enviar essa chave ao banco sem que um hacker no Wi-Fi do shopping a veja?
 
-**A solução com Diffie-Hellman:**
-a.  **Parâmetros Públicos:** Seu computador e o servidor do banco concordam em um número primo imenso (ex: de 2048 bits).
-b.  **Troca de Chaves Públicas:** Seu computador gera uma chave privada temporária, calcula uma chave pública e a envia ao banco. O banco faz o mesmo.
-c.  **Criação do Segredo:** Ambos usam a matemática do DH para gerar o mesmo número secreto.
-d.  **Conversa Segura:** Esse número secreto vira a "Chave da Sessão". A partir daí, toda a sua digitação de senha e saldo é criptografada com essa chave que **nunca viajou pela rede**.
+## A Solução com Diffie-Hellman (DH)
 
+Para garantir que uma comunicação seja privada, o protocolo Diffie-Hellman segue estas etapas fundamentais:
+
+*   **a. Parâmetros Públicos**  
+    Seu computador e o servidor do banco concordam abertamente em um número primo imenso (ex: de **2048 bits**) e uma base matemática. Como esses números são públicos, qualquer um pode vê-los, mas eles sozinhos não revelam nada.
+
+*   **b. Troca de Chaves Públicas**  
+    Seu computador gera uma **chave privada temporária** e, a partir dela, calcula uma **chave pública** para enviar ao banco. O banco realiza exatamente o mesmo processo.
+
+*   **c. Criação do Segredo**  
+    Ambos os lados combinam suas próprias chaves privadas com a chave pública recebida do outro lado. Graças à aritmética modular, ambos chegam ao **mesmo número secreto** de forma independente.
+
+*   **d. Conversa Segura**  
+    Esse número secreto torna-se a **"Chave da Sessão"**. A partir desse momento, todos os dados sensíveis (senhas, saldos, transações) são criptografados com essa chave que **nunca viajou pela rede**, tornando-a impossível de ser interceptada.
 ---
+
 
 ### **C. Por que ele é seguro? (O Problema do Logaritmo Discreto)**
 
