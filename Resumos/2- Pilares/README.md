@@ -2,6 +2,8 @@
 
 A Segurança da Informação é baseada em pilares essenciais, destacando-se a Confidencialidade, a Integridade e a Disponibilidade (Tríade CID), além dessas 3 ainda há a Autenticidade, o Não Repúdio(Irretratabilidade) e a Legalidade. O objetivo é proteger dados e sistemas contra acessos, alterações ou destruições não autorizadas, garantindo a autenticidade e a conformidade legal (como a LGPD).
 
+
+
 ## Confidencialidade
 
 Garante que a informação seja acessada apenas por pessoas, sistemas ou processos autorizados, protegendo contra acessos não autorizados
@@ -20,6 +22,8 @@ Ocorre quando informações sigilosas caem nas mãos de quem não deveria ter ac
 
 - Consequências: Exposição de segredos industriais, processos por danos morais e perda de vantagem competitiva.
 - Exemplos: Hackers invadem os servidores de uma clínica médica e vazam na internet os prontuários e resultados de exames de milhares de pacientes.
+
+
 
 ## Integridade
 
@@ -41,6 +45,7 @@ Ocorre quando os dados são alterados, deletados ou corrompidos de forma não au
 - Exemplo: Um funcionário mal-intencionado ou um invasor altera os valores de uma planilha financeira corporativa. A diretoria aprova investimentos com base nesses números inflados e a empresa sofre um rombo milionário.
 
 
+
 ## Disponibilidade
 
 Garante que a informação e os sistemas estejam acessíveis para uso pelos usuários autorizados sempre que necessário, evitando interrupções.
@@ -59,6 +64,8 @@ Ocorre quando os sistemas, redes ou dados ficam fora do ar e os usuários legít
 
 - Consequências: Prejuízos financeiros imediatos por travar vendas, multas contratuais por quebra de nível de serviço (SLA) e insatisfação de clientes.
 - Exemplo: Um ataque de DDoS (Negação de Serviço) inunda o site de um grande e-commerce de acessos falsos. O portal cai durante a Black Friday, impedindo milhares de compras legítimas.
+
+
 
 ## Autenticidade
 
@@ -79,6 +86,8 @@ Ocorre quando alguém ou algum sistema finge ser outra pessoa (falsidade ideoló
 - Consequências: Fraudes financeiras e facilidade para roubo posterior de dados internos.
 - Exemplo: Um criminoso envia um e-mail falso se passando pelo Diretor Executivo (técnica de CEO Scam), solicitando que o setor financeiro faça um pagamento urgente para uma conta fantasma.
 
+
+
 ## Não Repúdio(Irretratabilidade)
 
 Impede que alguém negue ter realizado uma ação (como enviar um e-mail ou assinar um documento), garantindo a responsabilidade legal.
@@ -97,6 +106,8 @@ Ocorre quando o sistema não possui mecanismos para provar legalmente quem execu
  
 - Consequências: Impossibilidade de cobrar devedores judicialmente e brechas massivas para fraudes internas sem culpados identificáveis.
 - Exemplo: Um cliente contrata um empréstimo volumoso de um banco ou assina um contrato de prestação de serviços clicando apenas em um botão de aceite ou enviando uma foto segurando o documento. Meses depois, o cliente para de pagar e alega na Justiça que nunca assinou aquele documento ou que outra pessoa utilizou a sua foto indevidamente. Como a empresa utilizou um método de assinatura eletrônica simples, sem o uso de certificados digitais qualificados ou biometria avançada, o juiz acaba dando ganho de causa ao cliente. Isso ocorre porque o sistema da instituição não foi capaz de oferecer garantias técnicas e legais irrefutáveis de que foi o próprio titular quem realizou a ação, permitindo que ele repudiasse o contrato com sucesso.
+
+
 
 ## Legalidade
 
