@@ -135,7 +135,7 @@ Em 2026, o maior desafio da criptografia é o avanço da computação quântica 
 
 ---
 
-### **Comparativo de Métodos (Atualizado 2026)**
+### **Comparativo de Métodos**
 
 | Tipo de Criptografia | Exemplo de Algoritmo | Uso em 2026 | Resistência Quântica |
 | :--- | :--- | :--- | :--- |
