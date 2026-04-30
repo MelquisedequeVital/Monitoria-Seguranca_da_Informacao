@@ -60,4 +60,8 @@ Para proteger sistemas contra bancos de dados de hashes pré-calculados (Rainbow
 *   **Salt (Sal):** Um valor aleatório é adicionado à entrada (ex: senha) antes de gerar o hash. Isso garante que, mesmo que dois usuários usem a mesma senha, seus hashes finais no banco de dados sejam diferentes, impedindo ataques de comparação em massa.
 
 ---
+
+**Dica Técnica**: Em 2026, para qualquer nova implementação, recomenda-se o uso de SHA-256 (pelo equilíbrio entre compatibilidade e segurança) ou SHA-3 (pela resistência estrutural). Para alta performance de arquivos, o BLAKE3 é a escolha preferida.
+
+---
 > **Nota de Implementação:** Em linguagens como Python, o uso da biblioteca `hashlib` continua sendo o padrão para gerar esses resumos de forma eficiente e segura.
