@@ -22,8 +22,34 @@ Utiliza uma **única chave** para ambos os processos: cifrar e decifrar.
 
 *   **Funcionamento:** É como um cofre físico onde a mesma chave que tranca é a que abre.
 *   **Vantagem:** Extremamente rápida e eficiente para grandes volumes de dados.
-*   **Desvantagem:** O problema da distribuição. Como enviar a chave para o destinatário de forma segura sem que ela seja interceptada?.
+*   **Desvantagem:** O problema da distribuição. Como enviar a chave para o destinatário de forma segura sem que ela seja interceptada?
 *   **Exemplos:** DES, 3DES, AES.
+
+#### **O Algoritmo AES (Advanced Encryption Standard)**
+
+O **AES** é um algoritmo de cifragem de bloco simétrico que se tornou o padrão mundial devido à sua segurança inabalável e alta performance. Diferente de seus antecessores, ele não se baseia apenas em confusão bit a bit, mas em operações matemáticas complexas sobre matrizes.
+
+##### **1. Estrutura e Funcionamento**
+O AES trabalha com blocos de dados de **128 bits**, organizados em uma matriz 4x4 chamada de *State*. O processo de transformação do texto simples em texto cifrado ocorre através de várias "rodadas" (*rounds*) de processamento, dependendo do tamanho da chave escolhida:
+*   **AES-128:** 10 rodadas.
+*   **AES-192:** 12 rodadas.
+*   **AES-256:** 14 rodadas.
+
+##### **2. As Quatro Etapas de uma Rodada AES**
+Em cada rodada (exceto na última), o algoritmo executa quatro transformações principais que garantem que os dados fiquem completamente irreconhecíveis:
+
+1.  **SubBytes (Substituição):** Cada byte do bloco é substituído por outro de acordo com uma tabela fixa (S-box). Isso gera **confusão**, garantindo que não haja uma relação linear entre o texto original e o cifrado.
+2.  **ShiftRows (Transposição):** As linhas da matriz de dados são deslocadas para a esquerda. A primeira linha não muda, a segunda desloca um byte, a terceira dois, e a quarta três. Isso garante que os bytes de uma coluna sejam espalhados por outras colunas.
+3.  **MixColumns (Mistura):** Uma operação matemática combina os quatro bytes de cada coluna para formar novos bytes. É essa etapa que espalha a influência de um único byte por todo o bloco (**difusão**).
+4.  **AddRoundKey:** Uma "subchave" (derivada da chave original) é combinada com o bloco através de uma operação lógica XOR.
+
+##### **3. Por que ele substituiu o DES e o 3DES?**
+
+Embora o DES e o 3DES tenham sido fundamentais no passado, o AES é superior por três motivos principais:
+
+*   **Resistência à Força Bruta:** O DES usa chaves de 56 bits (bilhões de combinações), o que hoje é quebrado em minutos. O AES-256 possui $1.1 \times 10^{77}$ combinações possíveis; mesmo que todos os computadores do mundo tentassem quebrá-lo simultaneamente, levariam mais tempo do que a idade atual do universo.
+*   **Eficiência de Design:** O 3DES é lento porque processa os dados três vezes para tentar compensar a fraqueza da chave curta. O AES foi projetado para ser "nativo" da computação moderna, sendo extremamente rápido em softwares e possuindo instruções específicas em processadores atuais (AES-NI).
+*   **Segurança Matemática:** O AES utiliza uma **Rede de Substituição-Permutação (SPN)**, que é matematicamente mais robusta contra criptoanálise do que a estrutura de Feistel utilizada pelo DES.
 
 ---
 
@@ -34,6 +60,33 @@ Utiliza um **par de chaves** matematicamente relacionadas: uma **Pública** (que
 *   **Vantagem:** Resolve o problema da distribuição de chaves, pois você pode publicar sua chave pública para o mundo sem riscos.
 *   **Desvantagem:** É muito mais lenta e consome mais processamento que a simétrica.
 *   **Exemplos:** RSA, ElGamal, ECC (Curvas Elípticas).
+
+#### **O Algoritmo RSA (Rivest-Shamir-Adleman)**
+
+O **RSA**, criado em 1977, foi o primeiro algoritmo de criptografia assimétrica a ser amplamente utilizado e continua sendo a base da segurança na internet (como nos certificados SSL/TLS). Sua segurança não reside em "misturar" bits, mas sim em um problema clássico da teoria dos números: a **dificuldade de fatorar números primos gigantes**.
+
+##### **1. O Fundamento Matemático**
+A segurança do RSA baseia-se na **unidirecionalidade da multiplicação**:
+*   É muito fácil para um computador multiplicar dois números primos extremamente grandes ($p$ e $q$) para obter um produto $n$.
+*   No entanto, é computacionalmente "impossível" para um computador atual fazer o caminho inverso: descobrir quais eram os dois primos originais ($p$ e $q$) partindo apenas do resultado $n$.
+
+##### **2. Como o Processo Funciona (Simplificado)**
+O algoritmo segue três etapas principais:
+
+1.  **Geração de Chaves:** Escolhem-se dois números primos grandes e secretos. A partir deles, gera-se o módulo $n$ (que faz parte da chave pública) e um expoente público. A chave privada é calculada usando uma fórmula matemática (Função Totiente de Euler) que "tranca" o segredo nos primos originais.
+2.  **Cifragem:** O remetente transforma a mensagem em um número $m$ e eleva esse número à potência da chave pública, aplicando o módulo $n$:
+    $$c = m^e \pmod{n}$$
+3.  **Decifragem:** O destinatário, que possui a chave privada $d$, realiza a operação inversa para recuperar a mensagem original:
+    $$m = c^d \pmod{n}$$
+
+##### **3. Por que ele é essencial, mas usado com cautela?**
+
+Embora seja extremamente seguro, o RSA possui características que definem como o usamos hoje:
+
+*   **Segurança vs. Tamanho:** Devido ao avanço do poder de processamento, chaves RSA de 1024 bits não são mais consideradas seguras. Atualmente, o padrão mínimo recomendado é **2048 bits** ou **4096 bits**.
+*   **Lentidão Matemática:** Por envolver exponenciação de números com milhares de dígitos, o RSA é milhares de vezes mais lento que o AES.
+*   **Uso Híbrido:** Na prática, quase nunca usamos o RSA para cifrar um arquivo inteiro. Usamos o RSA apenas para **cifrar a chave do AES**. Assim, temos o melhor dos dois mundos: a facilidade de distribuição do RSA e a velocidade do AES.
+*   **Assinatura Digital:** Além de cifrar, o RSA permite que o dono da chave privada "assine" um documento. Se a chave pública conseguir "abrir" a assinatura, o mundo tem a prova matemática de que apenas o dono da chave privada poderia ter criado aquele registro.
 
 ## **3. Evolução Cronológica dos Métodos**
 
@@ -110,7 +163,7 @@ Para garantir que uma comunicação seja privada, o protocolo Diffie-Hellman seg
 ---
 
 
-### **C. Por que ele é seguro? (O Problema do Logaritmo Discreto)**
+### **D. Por que ele é seguro? (O Problema do Logaritmo Discreto)**
 
 A segurança do Diffie-Hellman reside no fato de que é muito fácil calcular $g^x \bmod p$, mas é humanamente impossível (com computadores clássicos) fazer o caminho inverso: descobrir o $x$ tendo apenas o resultado, o $g$ e o $p$.
 
@@ -128,18 +181,16 @@ A segurança do Diffie-Hellman reside no fato de que é muito fácil calcular $g
 
 ## **5. O Cenário em 2026: Segurança Pós-Quântica (PQC)**
 
-Em 2026, o maior desafio da criptografia é o avanço da computação quântica (o chamado **Q-Day** ou **Y2Q**).
-*   **Vulnerabilidade dos Sistemas Clássicos:** Computadores quânticos potentes podem quebrar rapidamente algoritmos baseados em fatoração (RSA) e logaritmos discretos (Diffie-Hellman/ECC).
-*   **Transição para PQC:** Em 2024 e 2025, o NIST (EUA) padronizou os primeiros algoritmos de criptografia pós-quântica (como o **ML-KEM** e **ML-DSA**). Em 2026, empresas de tecnologia e órgãos governamentais estão em fase acelerada de migração para esses novos padrões, que se baseiam em problemas matemáticos resistentes a ataques quânticos (como criptografia baseada em reticulados).
-*   **Criptografia Híbrida:** Atualmente, utiliza-se a abordagem híbrida: combina-se um algoritmo clássico (como AES/RSA) com um pós-quântico, garantindo segurança contra ameaças de hoje e de amanhã.
+Em 2026, a migração para a Criptografia Pós-Quântica (PQC) e o uso de sistemas híbridos são as defesas essenciais para proteger os dados contra a capacidade de quebra de algoritmos clássicos (como o RSA) por computadores quânticos.
 
 ---
 
 ### **Comparativo de Métodos**
 
-| Tipo de Criptografia | Exemplo de Algoritmo | Uso em 2026 | Resistência Quântica |
-| :--- | :--- | :--- | :--- |
-| **Simétrica** | AES-256 | Padrão para proteção de dados em massa. | Alta (se a chave for grande) |
-| **Assimétrica Clássica**| RSA / Diffie-Hellman | Sendo substituída gradualmente. | Nenhuma |
-| **Assimétrica PQC** | ML-KEM (Kyber) | Novo padrão para troca de chaves. | Alta |
-| **Híbrida** | TLS 1.3 + PQC | Padrão para navegação web segura. | Máxima |
+| Algoritmo | Tipo | Tamanho de Chave Comum | Segurança Atual | Eficiência | Resistência Quântica |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **DES** | Simétrico | 56 bits | **Inseguro** (quebrável em minutos) | Alta | Nenhuma |
+| **3DES** | Simétrico | 168 bits | **Obsoleto** (uso apenas legado) | Muito Baixa | Baixa |
+| **AES** | Simétrico | 128 / 256 bits | **Padrão Ouro** (Seguro) | Altíssima | **Alta** (se 256 bits) |
+| **RSA** | Assimétrico | 2048 / 4096 bits | **Risco Alto** (exige chaves imensas) | Baixa | Nenhuma |
+| **ECC** | Assimétrico | 256 / 384 bits | **Seguro (Clássico)** | Alta | Nenhuma |
