@@ -122,7 +122,8 @@ O **Salt (Sal)** é um valor aleatório e único que é adicionado à entrada (e
 
 ---
 
-> **Conclusão:** Enquanto o algoritmo de hash (como **SHA-256**) define a "força" da criptografia, o uso de **Salt** define a resistência contra ataques em massa. Em sistemas modernos, nunca se armazena um hash sem a aplicação de um sal aleatório.
+## **Conclusão:** 
+Enquanto o algoritmo de hash (como **SHA-256**) define a "força" da criptografia, o uso de **Salt** define a resistência contra ataques em massa. Em sistemas modernos, nunca se armazena um hash sem a aplicação de um sal aleatório.
 
 
 > **Nota de Implementação:** Em linguagens como Python, o uso da biblioteca `hashlib` continua sendo o padrão para gerar esses resumos de forma eficiente e segura.
