@@ -1,2 +1,2 @@
-# Monitoria(Seguranca de Dados)
-Resumos dos assuntos da matéria de Segurança de Dados
+# Monitoria(Seguranca da Informação)
+Resumos dos assuntos da matéria de Segurança da Informação
