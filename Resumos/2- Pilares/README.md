@@ -10,7 +10,7 @@ Garante que a informação seja acessada apenas por pessoas, sistemas ou process
 
 Utilize criptografia de dados, controle rigoroso de acesso e autenticação multifator.
 
-	- Exemplos: 
+- Exemplos: 
 		- Criptografar o banco de dados de clientes para que invasores não consigam ler as informações mesmo se houver vazamento.
 		- Exigir biometria ou tokens físicos para liberar o acesso a pastas restritas da rede corporativa. 
 
@@ -29,7 +29,7 @@ Assegura que a informação seja mantida em seu estado original, protegendo-a co
 
 Utilize funções de hash (como SHA-256), assinaturas digitais, sistemas de controle de versão e trilhas de auditoria.
 
-	- Exemplos:
+- Exemplos:
 		- Calcular o código hash de um arquivo de instalação de software para garantir que ele não foi modificado por um vírus.
 		- Manter um histórico imutável (como em blockchain ou logs protegidos) que registra quem alterou um documento e em qual horário.
 
@@ -49,7 +49,7 @@ Garante que a informação e os sistemas estejam acessíveis para uso pelos usu�
 
 Faça redundância de servidores (Cluster), adote planos de backup frequentes e utilize proteção contra ataques DDoS.
 
-	- Exemplos:
+- Exemplos:
 		- Manter dois servidores rodando o mesmo site; se um falhar ou queimar, o outro assume o tráfego instantaneamente sem queda do serviço.
 		- Armazenar backups diários e automatizados na nuvem para recuperar os dados da empresa em caso de ataque de ransomware.
 
@@ -68,7 +68,7 @@ Confirma que a informação ou usuário é legítimo, garantindo que quem enviou
 
 Implemente certificados digitais SSL/TLS, logins com múltiplos fatores (MFA) e senhas fortes.
 
-	-Exemplos;
+- Exemplos;
 		- O cadeado verde no navegador (protocolo HTTPS) que comprova que você está acessando o site real do seu banco e não uma cópia falsa.
 		- O envio de um código SMS temporário para o celular do usuário após ele digitar a senha correta no sistema da empresa.
 		
@@ -87,7 +87,7 @@ Impede que alguém negue ter realizado uma ação (como enviar um e-mail ou assi
 
 Force o uso de assinatura digital qualificada e registro minucioso e centralizado de logs de atividade.
 
-	-Exemplos;
+- Exemplos;
 		- Uso de certificado digital padrão ICP-Brasil para assinar um contrato de prestação de serviços digitalmente; o autor não pode alegar que não assinou.
 		- Registrar em log inviolável que o "Usuário X" aprovou uma transferência financeira às 14h, impedindo-o de dizer que desconhece a transação.
 	
@@ -106,7 +106,7 @@ Refere-se à conformidade com leis e regulamentos vigentes, como a LGPD, garanti
 
 Realize auditorias jurídicas e técnicas periódicas, elabore políticas de privacidade e treine a equipe conforme as regulamentações.
 
-	-Exemplos;
+- Exemplos;
 		- Adequar os sistemas internos para atender às regras da LGPD (Lei Geral de Proteção de Dados), coletando apenas os dados estritamente necessários e com o consentimento do titular.
 		- Implementar os controles da norma ISO/IEC 27001 para certificar que a empresa segue padrões internacionais de segurança.
 		
