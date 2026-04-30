@@ -57,9 +57,13 @@ Seguindo o modelo da **Microsoft SDL**, as políticas focam na redução da supe
 
 ---
 
-## **5. Checklist do Desenvolvedor Seguro (Resumo OWASP)**
+## **5. Checklist do Desenvolvedor Seguro (OWASP)**
 
 A **OWASP** (*Open Web Application Security Project*) é uma fundação sem fins lucrativos que atua como uma comunidade global para melhorar a segurança do software. Ela é amplamente reconhecida por criar padrões e guias, como o **OWASP Top 10**, que lista as vulnerabilidades mais críticas em aplicações web para ajudar desenvolvedores a combater falhas recorrentes.
+
+O Checklist do Desenvolvedor Seguro da OWASP é um guia prático de boas maneiras para programadores criarem sistemas protegidos contra invasões.
+
+Em vez de focar apenas em como os hackers atacam (o que o famoso OWASP Top 10 faz), este checklist foca no que o desenvolvedor deve fazer durante a escrita do código para evitar que essas portas fiquem abertas.
 
 * **[1] Entradas e Saídas:** Valide todas as entradas via *Allowlists* e codifique saídas conforme o contexto (HTML, SQL, JS).
 * **[2] Identidade e Sessão:** Use cookies com flags `HttpOnly` e `Secure`. Troque IDs de sessão imediatamente após o login.
