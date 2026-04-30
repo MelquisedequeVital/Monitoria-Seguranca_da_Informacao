@@ -22,6 +22,10 @@ Envolvem falhas decorrentes da desatenção, falta de treinamento ou má fé dos
 
 Decorrem de erros cometidos durante o design, desenvolvimento ou implementação de códigos. O padrão ouro para classificar as falhas mais críticas em aplicações web é o **OWASP Top 10**.
 
+O **OWASP Top 10** é um documento de conscientização reconhecido mundialmente, listando os 10 riscos de segurança mais críticos para aplicações web. Elaborado pela fundação OWASP com base em consenso de especialistas, ele ajuda desenvolvedores e empresas a identificar, priorizar e mitigar as vulnerabilidades mais comuns, como injeção, falhas de autenticação e controle de acesso.
+
+### OWASP Top 10
+
 1. **Quebra de Controle de Acesso:** Falha que permite a usuários acessar recursos ou funções fora de suas permissões pretendidas.
    - **Como prevenir:** Implementar o princípio do privilégio mínimo, negar acesso por padrão e centralizar os controles de autorização no servidor.
    - **Exemplo:** Um usuário comum alterando a URL para acessar o painel de `/admin` ou acessando dados de outro cliente mudando um ID.
