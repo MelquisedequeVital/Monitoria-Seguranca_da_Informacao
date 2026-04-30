@@ -31,8 +31,6 @@ Os backups operam manipulando a "marca" (bit de atributo) dos arquivos para iden
 | **Completo (Normal)** | Todos os arquivos selecionados. | **Marca** todos os arquivos copiados. |
 | **Incremental** | Apenas os criados ou alterados desde o último backup. | **Marca** os arquivos após a cópia. |
 | **Diferencial** | Todos os novos ou alterados desde o último backup completo. | **Não altera** a marca do arquivo. |
-| **De Cópia** | Arquivos selecionados (uso emergencial). | **Não altera** a marca do arquivo. |
-| **Diário** | Arquivos criados ou alterados na data específica. | **Não altera** a marca do arquivo. |
 
 
 
