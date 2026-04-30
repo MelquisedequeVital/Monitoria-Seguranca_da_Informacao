@@ -42,19 +42,19 @@ Proposto em 1976, o protocolo **Diffie-Hellman** permitiu que duas partes criass
 *   **Como funciona:** Baseia-se na dificuldade matemática do **Logaritmo Discreto**. Alice e Bob trocam valores calculados a partir de chaves privadas secretas e parâmetros públicos (número primo e base). Ao final, ambos chegam matematicamente ao mesmo segredo compartilhado, enquanto um observador externo não consegue reverter o cálculo.
 *   Para entender como ele faz essa "mágica", vamos usar a analogia clássica das cores e um exemplo de uso no dia a dia.
 
-### **1. A Analogia das Cores (O conceito visual)**
+### **A. A Analogia das Cores (O conceito visual)**
 
 Imagine que Alice e Bob querem combinar uma cor secreta, mas a espiã Eva está observando tudo o que eles trocam.
 
-1.  **Acordo Público:** Alice e Bob escolhem uma cor inicial publicamente (ex: **Amarelo**). Eva agora sabe que a base é Amarelo.
-2.  **Segredos Privados:**
+a.  **Acordo Público:** Alice e Bob escolhem uma cor inicial publicamente (ex: **Amarelo**). Eva agora sabe que a base é Amarelo.
+b.  **Segredos Privados:**
     *   Alice escolhe uma cor secreta (ex: **Vermelho**) e não conta a ninguém.
     *   Bob escolhe sua própria cor secreta (ex: **Azul**) e também a mantém escondida.
-3.  **A Mistura Pública:**
+c.  **A Mistura Pública:**
     *   Alice mistura seu segredo (Vermelho) com a base (Amarelo) e obtém **Laranja**. Ela envia o Laranja para Bob.
     *   Bob mistura seu segredo (Azul) com a base (Amarelo) e obtém **Verde**. Ele envia o Verde para Alice.
     *   *Eva vê passar o Laranja e o Verde, mas ela não consegue "separar" as cores para descobrir o Vermelho ou o Azul originais.*
-4.  **O Segredo Final (A Mágica):**
+d.  **O Segredo Final (A Mágica):**
     *   Alice pega o Verde de Bob e adiciona sua cor secreta (Vermelho).
     *   Bob pega o Laranja de Alice e adiciona sua cor secreta (Azul).
     *   **Resultado:** Ambos chegam exatamente à mesma cor final (um **Marrom** específico)!
@@ -63,7 +63,7 @@ Eva tem o Amarelo, o Laranja e o Verde, mas sem as cores secretas, ela nunca che
 
 ---
 
-### **2. Caso Real: O "Cadeado" do Navegador (HTTPS)**
+### **B. Caso Real: O "Cadeado" do Navegador (HTTPS)**
 
 Sempre que você acessa um site seguro (como o seu banco ou o Gmail), o protocolo **TLS/SSL** entra em ação. O Diffie-Hellman é frequentemente usado na fase de "Handshake" (aperto de mão) desse processo.
 
@@ -71,14 +71,14 @@ Sempre que você acessa um site seguro (como o seu banco ou o Gmail), o protocol
 Você (seu navegador) quer conversar com o servidor do banco. Vocês precisam de uma **chave simétrica** (como o AES-256) para criptografar as mensagens de forma rápida. Mas como enviar essa chave ao banco sem que um hacker no Wi-Fi do shopping a veja?
 
 **A solução com Diffie-Hellman:**
-1.  **Parâmetros Públicos:** Seu computador e o servidor do banco concordam em um número primo imenso (ex: de 2048 bits).
-2.  **Troca de Chaves Públicas:** Seu computador gera uma chave privada temporária, calcula uma chave pública e a envia ao banco. O banco faz o mesmo.
-3.  **Criação do Segredo:** Ambos usam a matemática do DH para gerar o mesmo número secreto.
-4.  **Conversa Segura:** Esse número secreto vira a "Chave da Sessão". A partir daí, toda a sua digitação de senha e saldo é criptografada com essa chave que **nunca viajou pela rede**.
+a.  **Parâmetros Públicos:** Seu computador e o servidor do banco concordam em um número primo imenso (ex: de 2048 bits).
+b.  **Troca de Chaves Públicas:** Seu computador gera uma chave privada temporária, calcula uma chave pública e a envia ao banco. O banco faz o mesmo.
+c.  **Criação do Segredo:** Ambos usam a matemática do DH para gerar o mesmo número secreto.
+d.  **Conversa Segura:** Esse número secreto vira a "Chave da Sessão". A partir daí, toda a sua digitação de senha e saldo é criptografada com essa chave que **nunca viajou pela rede**.
 
 ---
 
-### **3. Por que ele é seguro? (O Problema do Logaritmo Discreto)**
+### **C. Por que ele é seguro? (O Problema do Logaritmo Discreto)**
 
 A segurança do Diffie-Hellman reside no fato de que é muito fácil calcular $g^x \bmod p$, mas é humanamente impossível (com computadores clássicos) fazer o caminho inverso: descobrir o $x$ tendo apenas o resultado, o $g$ e o $p$.
 
