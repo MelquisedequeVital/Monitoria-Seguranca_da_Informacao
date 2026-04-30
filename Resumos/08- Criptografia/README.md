@@ -13,7 +13,29 @@ O objetivo primordial da criptografia é garantir a **Confidencialidade** (ou si
 
 ---
 
-## **2. Evolução Cronológica dos Métodos**
+## **2. Criptografia Simétrica vs. Assimétrica**
+
+A grande divisão da criptografia moderna reside em como as chaves são gerenciadas para proteger o pilar da **Confidencialidade**.
+
+### **A. Criptografia Simétrica (Chave Privada)**
+Utiliza uma **única chave** para ambos os processos: cifrar e decifrar.
+
+*   **Funcionamento:** É como um cofre físico onde a mesma chave que tranca é a que abre.
+*   **Vantagem:** Extremamente rápida e eficiente para grandes volumes de dados.
+*   **Desvantagem:** O problema da distribuição. Como enviar a chave para o destinatário de forma segura sem que ela seja interceptada?.
+*   **Exemplos:** DES, 3DES, AES.
+
+---
+
+### **B. Criptografia Assimétrica (Chave Pública)**
+Utiliza um **par de chaves** matematicamente relacionadas: uma **Pública** (que todos podem saber) e uma **Privada** (que deve ser mantida em segredo absoluto pelo dono).
+
+*   **Funcionamento:** A chave pública cifra a mensagem, mas **apenas** a chave privada correspondente pode decifrá-la. É como uma caixa de correio: qualquer um pode colocar uma carta (cifrar), mas só o dono tem a chave para abrir a caixa e ler (decifrar).
+*   **Vantagem:** Resolve o problema da distribuição de chaves, pois você pode publicar sua chave pública para o mundo sem riscos.
+*   **Desvantagem:** É muito mais lenta e consome mais processamento que a simétrica.
+*   **Exemplos:** RSA, ElGamal, ECC (Curvas Elípticas).
+
+## **3. Evolução Cronológica dos Métodos**
 
 A história da criptografia é dividida em fases que acompanham o desenvolvimento tecnológico da humanidade.
 
@@ -36,7 +58,7 @@ Com os computadores, a segurança passou a residir na chave e não mais no segre
 
 ---
 
-## **3. O Protocolo Diffie-Hellman: Trocando Segredos em Público**
+## **4. O Protocolo Diffie-Hellman: Trocando Segredos em Público**
 
 Proposto em 1976, o protocolo **Diffie-Hellman** permitiu que duas partes criassem uma chave secreta compartilhada através de um canal monitorado, sem nunca terem trocado chaves antes.
 *   **Como funciona:** Baseia-se na dificuldade matemática do **Logaritmo Discreto**. Alice e Bob trocam valores calculados a partir de chaves privadas secretas e parâmetros públicos (número primo e base). Ao final, ambos chegam matematicamente ao mesmo segredo compartilhado, enquanto um observador externo não consegue reverter o cálculo.
@@ -104,7 +126,7 @@ A segurança do Diffie-Hellman reside no fato de que é muito fácil calcular $g
 
 ---
 
-## **4. O Cenário em 2026: Segurança Pós-Quântica (PQC)**
+## **5. O Cenário em 2026: Segurança Pós-Quântica (PQC)**
 
 Em 2026, o maior desafio da criptografia é o avanço da computação quântica (o chamado **Q-Day** ou **Y2Q**).
 *   **Vulnerabilidade dos Sistemas Clássicos:** Computadores quânticos potentes podem quebrar rapidamente algoritmos baseados em fatoração (RSA) e logaritmos discretos (Diffie-Hellman/ECC).
