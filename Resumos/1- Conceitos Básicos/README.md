@@ -80,6 +80,8 @@ Enquanto a Ameaça é o potencial de dano, o Ataque é a materialização dessa 
   
 - **Ataques Internos (Insider Threats)**: Realizados por pessoas que já possuem acesso autorizado à rede interna (como funcionários insatisfeitos, ex-colaboradores ou prestadores de serviço). São perigosos porque contornam a maior parte das defesas externas.
 
+--- 
+
 ## **Controles, Contramedidas e Tratamento de Riscos**
 
 Organizações aplicam controles e ferramentas automatizadas desde o início da criação de um software para mitigar riscos e evitar vulnerabilidades em produção. O tratamento desses riscos segue quatro estratégias principais:
