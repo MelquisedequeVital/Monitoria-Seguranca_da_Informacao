@@ -27,8 +27,6 @@ A segurança dos algoritmos evoluiu conforme a capacidade de processamento aumen
 
 O **MD5** é um algoritmo de hash amplamente utilizado que gera uma saída fixa de **128 bits** a partir de uma entrada de dados de qualquer tamanho. O resultado é comumente exibido como um número hexadecimal de 32 dígitos.
 
----
-
 #### Funcionamento do MD5
 
 O processo de hashing é dividido em quatro etapas fundamentais:
