@@ -120,10 +120,6 @@ O **Salt (Sal)** é um valor aleatório e único que é adicionado à entrada (e
 * **Saídas Únicas:** Mesmo que dois usuários tenham a mesma senha (ex: `123456`), o Salt de cada um será diferente. Isso resulta em hashes completamente distintos no banco de dados.
 * **Inutilizando as Tabelas:** Como as Rainbow Tables são geradas com base em hashes puros (sem sal), elas se tornam inúteis. O invasor teria que gerar uma nova Rainbow Table específica para cada Salt encontrado, o que é computacionalmente inviável.
 
----
-
-## **Conclusão:** 
-Enquanto o algoritmo de hash (como **SHA-256**) define a "força" da criptografia, o uso de **Salt** define a resistência contra ataques em massa. Em sistemas modernos, nunca se armazena um hash sem a aplicação de um sal aleatório.
-
+**Conclusão:**  Enquanto o algoritmo de hash (como **SHA-256**) define a "força" da criptografia, o uso de **Salt** define a resistência contra ataques em massa. Em sistemas modernos, nunca se armazena um hash sem a aplicação de um sal aleatório.
 
 > **Nota de Implementação:** Em linguagens como Python, o uso da biblioteca `hashlib` continua sendo o padrão para gerar esses resumos de forma eficiente e segura.
