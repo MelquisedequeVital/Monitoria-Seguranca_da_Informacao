@@ -48,14 +48,16 @@ Os ataques ativos envolvem a **modificação** de fluxos de dados ou a criação
 * **Cross-Site Scripting (XSS):**
     * **Como ocorre:** Injeção de scripts maliciosos (Javascript) em páginas web legítimas, que são executados no navegador da vítima para roubar sessões de acesso.
 
-#### **B. Falsificação (Spoofing) e Engodo**
+#### **B. Falsificação (Spoofing) e Armadilhas**
 * **Spoofing (Falsificação):**
     * **IP Spoofing:** O atacante mascara o endereço IP de origem para parecer que o tráfego vem de uma fonte confiável.
     * **E-mail Spoofing:** Alteração do cabeçalho de um e-mail para que o remetente pareça ser alguém conhecido.
     * **DNS Spoofing:** Envenenamento do cache do DNS para redirecionar utilizadores de sites legítimos para sites falsos.
 * **Phishing:**
     * **Como ocorre:** Envio de mensagens (e-mail, SMS) que simulam entidades reais para enganar o utilizador e obter senhas ou dados bancários.
-
+* **Cross-Site Request Forgery (CSRF):** ataque cibernético que engana o navegador de um usuário autenticado para realizar ações indesejadas em outro site, como alterar senhas ou transferir fundos. O invasor aproveita a sessão ativa do usuário, tornando a ação fraudulenta legítima para o servidor.
+	* **Prevenção**: A forma mais eficaz é incluir um token único e aleatório em cada solicitação de formulário, que o servidor verifica.
+	
 #### **C. Negação de Serviço e Extorsão**
 * **DoS e DDoS (Negação de Serviço):**
     * **Como ocorre:** Sobrecarga de um servidor com tráfego massivo para torná-lo indisponível. No **DDoS**, o ataque é feito de forma distribuída por milhares de máquinas infectadas (**Botnets**).
