@@ -46,15 +46,15 @@ Proposto em 1976, o protocolo **Diffie-Hellman** permitiu que duas partes criass
 
 Imagine que Alice e Bob querem combinar uma cor secreta, mas a espiã Eva está observando tudo o que eles trocam.
 
-a.  **Acordo Público:** Alice e Bob escolhem uma cor inicial publicamente (ex: **Amarelo**). Eva agora sabe que a base é Amarelo.
-b.  **Segredos Privados:**
+*   a.  **Acordo Público:** Alice e Bob escolhem uma cor inicial publicamente (ex: **Amarelo**). Eva agora sabe que a base é Amarelo.
+*   b.  **Segredos Privados:**
     *   Alice escolhe uma cor secreta (ex: **Vermelho**) e não conta a ninguém.
     *   Bob escolhe sua própria cor secreta (ex: **Azul**) e também a mantém escondida.
-c.  **A Mistura Pública:**
+*   c.  **A Mistura Pública:**
     *   Alice mistura seu segredo (Vermelho) com a base (Amarelo) e obtém **Laranja**. Ela envia o Laranja para Bob.
     *   Bob mistura seu segredo (Azul) com a base (Amarelo) e obtém **Verde**. Ele envia o Verde para Alice.
     *   *Eva vê passar o Laranja e o Verde, mas ela não consegue "separar" as cores para descobrir o Vermelho ou o Azul originais.*
-d.  **O Segredo Final (A Mágica):**
+*   d.  **O Segredo Final (A Mágica):**
     *   Alice pega o Verde de Bob e adiciona sua cor secreta (Vermelho).
     *   Bob pega o Laranja de Alice e adiciona sua cor secreta (Azul).
     *   **Resultado:** Ambos chegam exatamente à mesma cor final (um **Marrom** específico)!
@@ -70,7 +70,7 @@ Sempre que você acessa um site seguro (como o seu banco ou o Gmail), o protocol
 **O cenário:**
 Você (seu navegador) quer conversar com o servidor do banco. Vocês precisam de uma **chave simétrica** (como o AES-256) para criptografar as mensagens de forma rápida. Mas como enviar essa chave ao banco sem que um hacker no Wi-Fi do shopping a veja?
 
-## A Solução com Diffie-Hellman (DH)
+## **C. A Solução com Diffie-Hellman (DH)**
 
 Para garantir que uma comunicação seja privada, o protocolo Diffie-Hellman segue estas etapas fundamentais:
 
