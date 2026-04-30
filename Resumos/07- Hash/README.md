@@ -87,6 +87,7 @@ Diferente de seus antecessores, o SHA-3 utiliza a **Construção Sponge (Esponja
 ## **3. O Cenário em 2026: Segurança Pós-Quântica**
 
 Em 2026, O avanço da computação quântica trouxe novas necessidades para os algoritmos de hash, a segurança foca na resistência a computadores quânticos, mantendo o uso de SHA-256/SHA-3, adotando o veloz BLAKE3 para Big Data e o novo padrão SLH-DSA para assinaturas digitais protegidas.
+
 ---
 
 ## 4.  **Comparativo de Algoritmos de Hash**
